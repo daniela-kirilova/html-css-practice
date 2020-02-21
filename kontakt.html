@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<title>Layout</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="stylesheet" href="css/layout_3.css">
+</head>
+<body>
+	<div id="aussen">
+		<header>
+			<h1>
+				<img src="bilder/traube.png" width="26" height="40" alt="" />
+				Weingut Serrig
+			</h1>
+			<nav>
+				<ul>
+					<li><a href="index.html">Startseite</a></li>
+					<li><a href="weine.html">Weine</a></li>
+					<li><a href="philosophie.html">Philosophie</a></li>
+					<li><a href="galerie.html">Galerie</a></li>
+					<li><strong>Kontakt</strong></li>
+				</ul>
+			</nav>
+		</header>
+		<main id="kontakt">
+			<!-- Inhalte ab hier-->
+			<form action="http://www.dw-formmailer.de/cgi-bin/dwmailer/dwmailer.pl" method="post" enctype="multipart/form-data">
+				<input type="hidden" name="empfaenger_mail" value="bWVpbm5hbWVAYW5iaWV0ZXIuZGU=">
+				<input type="hidden" name="pflicht" value="absender_vorname,absender_name,absender_nachricht">
+				<p>Vorname *<br>
+					<input value="Vorname" type="text" name="absender_vorname" size="30" maxlength="50">
+				</p>
+				<p>Nachname *<br>
+					<input placeholder="Nachname" type="text" name="absender_name" size="30" maxlength="50">
+				</p>
+				<p>E-Mail *<br>
+					<input type="email" name="absender_mail" size="30" maxlength="50">
+				</p>
+				<p>Telefon<br>
+					<input type="tel" name="absender_telefon" size="30" maxlength="50">
+				</p>
+				<p>Nachricht *<br>
+					<textarea placeholder="Nachricht" name="absender_nachricht" rows="5" cols="40" maxlength="200"></textarea>
+				</p>
+				<p>
+					<input type="submit" value="absenden">
+				</p>
+			</form>
+			<!-- Inhalte bis hier-->
+		</main>
+	</div>
+</body>
+</html>

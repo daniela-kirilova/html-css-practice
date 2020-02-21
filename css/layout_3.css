@@ -1,0 +1,259 @@
+/*Box-Modell umstellen auf HTML-Ebene, gilt vorerst nur für den html-Befehl*/
+html{
+  -moz-box-sizing:border-box;
+	-webkit-box-sizing:border-box;
+	box-sizing:border-box;
+	/*Den Verlauf mindestens bis auf den unteren Browserrand ausdehnen*/
+	min-height:100%;
+	/*Auf jeden Fall für Desktop Browser einen Scrollbalken erzwingen, sonst "hüpft" das Layout.*/
+	overflow-x:scroll;
+	overflow-y:scroll;
+}
+/*Box Modell an alle Kind-Elemente vererben!*/
+*,::before,::after{
+  -moz-box-sizing:inherit;
+	-webkit-box-sizing:inherit;
+	box-sizing:inherit;
+}
+/*Normalisieren aller Abstände*/
+*{
+	padding:0;
+	margin:0;
+}
+body{
+	font-family: "Segoe UI", Segoe, Frutiger,"Frutiger Linotype","Dejavu Sans","Helvetica Neue",Arial,sans-serif;
+	font-size:1.0625em;/*17px; 17px / 16px*/
+	/*linear-gradient hier einfügen!*/
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#d6dbba+0,7f8947+100 */
+	background: #d6dbba; /* Old browsers */
+	background: -moz-linear-gradient(top, #d6dbba 0%, #7f8947 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(top, #d6dbba 0%,#7f8947 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom, #d6dbba 0%,#7f8947 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+/*Layout*/
+/*Zentrieren des Layouts*/
+#aussen{
+	/*border:5px dotted black;*/
+	max-width:56.4706em;
+	margin:0.5882em auto;
+}
+header{
+	background:url(../bilder/hintergrund_oben.jpg);
+	text-align:right;
+}
+header h1{
+	font-size: 2em;
+	/*padding:2.6471em 2.3529em 0;*/
+	padding:1.3236em 1.1765em 0;
+	min-height:3.8235em;
+	color:#ddd7c1;
+	font-weight:normal;
+	text-shadow: #000 2px 1px 1px;
+}
+nav ul{
+	list-style:none;
+}
+main{
+	display:block;/*ie9-11*/
+	background:#fff;
+	min-height:29.4117em;
+	padding:1.7647em 2.3529em;
+}
+/*Navigationsleiste*/
+nav{
+	overflow:hidden;
+}
+nav ul {
+	float:right;
+	list-style-type: none;
+	/*für mobile Ansicht*/
+	background:#585b6a;
+}
+nav li{
+	float:left;
+}
+nav a, nav strong{
+	text-decoration:none;
+	float:left;
+	padding:0.5em 1.5em;
+	font-weight:normal;
+}
+nav a:link, nav a:visited{
+	color:#ddd7c1;
+	background:#585b6a;
+}
+nav a:focus, nav a:hover, nav a:active, nav strong{
+	color:#32364a;
+	background-color:#ffbf00;	
+}
+/*Inhalte*/
+img{
+	max-width:100%;
+	height:auto;
+}
+main h1{
+	margin-bottom:0.8em;
+	color:#32364a;
+	font-size:1.7647em;/*30px;  30 / 17*/
+}
+h2, h3, p, blockquote, figure{
+	margin-bottom:1em;
+}
+figcaption{
+	margin-top:0.5em;
+	font-style:italic;
+}
+h2{
+		 font-size:1.4118em;/*24px; 24/17*/
+		 color:#32364A;
+	}
+h3{
+	 color:#32364A;
+	 font-size:1.1765em;/*20px; 20/17*/
+}
+abbr{
+	font-weight:bold;
+}
+.stehtlinks{
+	float:left;
+	margin: 0 0.8824em 1.471em 0;
+}
+.stop{
+	clear:both;
+}
+.zitat{
+	/*border: 1px dotted #32364a;*/
+	padding: 1.706em;
+	box-shadow: inset 0 0 4.117em #ddd;
+	border-radius: 0.2353em;
+	margin-bottom:1em;
+}
+main#kontakt{
+	background:#fff url(../bilder/glaeser_min.jpg) no-repeat bottom right;
+}
+/*Links*/
+/*Hover-Schatten von Bildlinks entfernen*/
+a img{
+	vertical-align:bottom;
+	border:none;
+}
+a:link{
+color:#000;
+}
+a:visited{
+	color:#666;
+}
+a:focus, a:hover, a:active{
+	background:#585b6a;
+	color:#fff;
+	text-decoration:none;
+}
+/*Tabellen*/
+table{
+	border-collapse: collapse;
+	background:#eee url(../bilder/weinlaub_min_grau.jpg) repeat-x;
+	margin:0 auto;
+}
+td, th{
+	padding:0.5em;
+	border: 0.1765em #fff solid;	
+	text-align:left;
+	vertical-align:top;
+	box-shadow: inset 1px 3px 5px -3px rgba(0,0,0,0.5);
+}
+th{
+	background:#be633c url(../bilder/weinlaub_min_grau.jpg) repeat-x; 
+	background-blend-mode: multiply;
+	color:#fff;
+	text-shadow: 1px 1px 2px #000;
+}
+table img{
+	float:left;
+	margin-right:0.5em;
+	border-radius: 0.2353em /*4px*/;
+	box-shadow:0 0 1em #ccc;
+}
+tr:last-child td{
+	text-align:right;
+	font-style:italic;
+}
+/*Formulare*/
+form{
+	display:block;
+	max-width: 30em;
+	margin-left: auto;
+	margin-right: auto;
+}
+input, textarea{
+	background:rgba(220,220,220,0.75);
+	border:1px solid rgba(220,220,220,0.75);
+	font:inherit;
+	border-radius:0.2941em;/*5px;*/
+	padding:0.4118em;/*7px;*/
+	/*farbigen Rahmen in Chrome und Safari abschalten.*/
+	outline:none;
+	width:100%;
+}
+
+input:focus, textarea:focus{
+	background:#fff;
+	border:1px solid #000;
+}
+input[type=submit]{
+	background:#be633c;
+	border:none;
+	color:#fff;
+	border-radius:50% 50%;
+	box-shadow:inset 0 0 1em #fb9d23;
+	padding:0.5882em;/*10px*/
+	width:auto;
+}
+input[type=submit]:focus, input[type=submit]:active{
+ background-color:#A33202;
+}
+
+
+@media screen and (max-width: 42em) {
+	/*Tabellen
+	Dies ist nicht Gegenstand des Grundkurses.
+	Die Tabelle ist auch nicht für den Einsatz auf verschiedenen Viewports geeignet.
+	Sie ist dafür viel zu komplex, weshalb die Lösung nicht standardisierbar ist.
+	Dies funktioniert zwar, artet aber in eine "Selektorenschlacht" aus.*/
+  table, tbody, tfoot, tr {
+		display: block;
+  }
+	thead , tfoot{
+		display: none;
+	}
+	td,th{
+		border:none;
+		text-align:left !important;
+		font-style:normal !important;
+		box-shadow:none;
+	}
+	tr:nth-child(1), tr:nth-child(3), tr:nth-child(4){
+		box-shadow: inset 1px 3px 5px -3px rgba(0,0,0,0.5);
+	}
+	tr:nth-child(2), tr:nth-child(3), tr:nth-child(5){
+		border-bottom: 3px solid #fff;
+	}
+	tr:nth-child(1) td:nth-child(1), tr:nth-child(3) td:nth-child(1), tr:nth-child(4) td:nth-child(1){
+		font-weight:bold;
+	}
+	tr:nth-child(1) td:nth-child(1)::before , tr:nth-child(3) td:nth-child(1)::before , tr:nth-child(4) td:nth-child(1)::before {
+		content: "Wein ";
+		padding: 0.5em 0;
+		font-weight:bold;
+		display:block;
+	}
+	tr:nth-child(1)  td:nth-child(2)::before, tr:nth-child(3)  td:nth-child(2)::before, tr:nth-child(4)  td:nth-child(2)::before, tr:nth-child(2)  td:nth-child(1)::before, tr:nth-child(5)  td:nth-child(1)::before{
+		content: "Jahrgang: ";
+		font-style:italic;
+	}
+	tr:nth-child(1) td:nth-child(4)::before, tr:nth-child(3) td:nth-child(4)::before, tr:nth-child(4) td:nth-child(4)::before, tr:nth-child(2) td:nth-child(3)::before, tr:nth-child(5) td:nth-child(3)::before{
+		content: "Grundpreis / l: ";
+	}
+	td {
+		display: block;
+	}
+}
